@@ -1,26 +1,21 @@
 " Vimplug
 call plug#begin()
 
-Plug 'sjl/badwolf'              " A color scheme for Vim, pieced together by Steve Losh.
 Plug 'kien/ctrlp.vim'           " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+Plug 'sjl/badwolf'              " A color scheme for Vim, pieced together by Steve Losh.
+Plug 'tpope/vim-fugitive'       " the premier Vim plugin for Git
+Plug 'Thyrum/vim-stabs'         " Tabs for indentation, spaces for alignment
 Plug 'vim-syntastic/syntastic'  " a syntax checking plugin for Vim created by Martin Grenfell.
-Plug 'Thyrum/vim-stabs'         " Tabs for indentation spaces for alignment
 
 call plug#end()
 
 " General
-set linebreak	" Break lines at word (requires Wrap lines)
+set linebreak	    " Break lines at word (requires Wrap lines)
 set showbreak=+++ 	" Wrap-broken line prefix
 set textwidth=100	" Line wrap (number of cols)
  
-
-set smarttab	" Enable smart-tabs
- 
-set ruler	" Show row and column ruler information
- 
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
-
 
 " Colors
 colorscheme badwolf
@@ -53,6 +48,7 @@ set shiftwidth=4	" Number of auto-indent spaces
 set tabstop=4       " Number of visual spaces per tab
 set autoindent	    " Auto-indent new lines
 set smartindent	    " Enable smart-indent
+set smarttab	    " Enable smart-tabs
 
 " UI Config
 set number	        " Shows line numbers
@@ -62,6 +58,7 @@ filetype indent on  " load filetype specific indent files
 set wildmenu        " visual autocomplete for command menu
 set lazyredraw      " redraw only when needed
 set showmatch       " highlight matching {[()]}
+set ruler	        " Show row and column ruler information
 
 " Search
 set incsearch	" Searches for strings incrementally
@@ -91,6 +88,16 @@ let mapleader=","       " leader is comma
 nnoremap <leader>s :mksession<CR>
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+
+"" Git
+noremap <Leader>ga :Gwrite<CR>
+noremap <Leader>gc :Git commit<CR>
+noremap <Leader>gsh :Git push<CR>
+noremap <Leader>gll :Git pull<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Git blame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
