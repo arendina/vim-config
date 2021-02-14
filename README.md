@@ -13,7 +13,15 @@ From vim run :PlugInstall
 
 ## Commands
 
-### Basic Vim Commands
+### Fugitive Commands
 
-TODO
-
+| Leader shortcut | Command |
+| --------------- | ------- |
+| ,ga             | :Gwrite |
+| ,gc             | :Git commit |
+| ,gsh | :Git push |
+| ,gll | :Git pull |
+| ,gs  | :Gstatus |
+| ,gb  | :Git blame |
+| ,gd  | :Gvdiff |
+| ,gr | :Gremove |
