@@ -2,6 +2,7 @@
 call plug#begin()
 
 Plug 'kien/ctrlp.vim'           " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+Plug 'morhetz/gruvbox'          " Retro groove colorscheme for Vim
 Plug 'sjl/badwolf'              " A color scheme for Vim, pieced together by Steve Losh.
 Plug 'tpope/vim-fugitive'       " the premier Vim plugin for Git
 Plug 'Thyrum/vim-stabs'         " Tabs for indentation, spaces for alignment
@@ -18,7 +19,7 @@ set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
 " Colors
-colorscheme badwolf
+colorscheme gruvbox
 
 " Make the gutters darker than the background.
 " 0: off, 1: on
