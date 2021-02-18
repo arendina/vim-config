@@ -20,7 +20,7 @@ Vertical split:  vs <filename>
 
 ### Split commands
 
-| command | description |
+| Command | Description |
 | ------- | ----------- |
 | C-J     | move to the split below |
 | C-K     | move to the split above |
@@ -28,6 +28,13 @@ Vertical split:  vs <filename>
 | C-H       | move to the split to the left |
 
 You can use tab completion to have the list of files after typing the command.
+
+### Buffers
+
+| Command | Description |
+|-------- | ----------- |
+| :ls     | list buffers |
+| :b buffer name or number | open buffer |
 
 ## Plugins
 
