@@ -8,6 +8,7 @@ Plug 'morhetz/gruvbox'          " Retro groove colorscheme for Vim
 Plug 'sjl/badwolf'              " A color scheme for Vim, pieced together by Steve Losh.
 Plug 'tpope/vim-fugitive'       " the premier Vim plugin for Git
 Plug 'Thyrum/vim-stabs'         " Tabs for indentation, spaces for alignment
+Plug 'tmhedberg/simpylfold'     " No-BS Python code folding for Vim
 Plug 'vim-syntastic/syntastic'  " a syntax checking plugin for Vim created by Martin Grenfell.
 
 call plug#end()
@@ -156,6 +157,10 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+" Omnicompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " *******
 " Plugins
 " *******
@@ -185,6 +190,5 @@ let g:syntastic_auto_loc_list = 0   " do not load loc_list, it's annoying
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Omnicompletion
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
+" SimpylFold
+let g:SimpylFold_docstring_preview=1
