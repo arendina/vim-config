@@ -11,14 +11,14 @@ TODO
 Download the vimrc file, put it in your home .vimrc
 From vim run :PlugInstall
 
-## Commands
+## Plugins
 
 ### Fugitive Commands
 
 | Leader shortcut | Command |
 | --------------- | ------- |
-| ,ga             | :Gwrite |
-| ,gc             | :Git commit |
+| ,ga | :Gwrite |
+| ,gc | :Git commit |
 | ,gsh | :Git push |
 | ,gll | :Git pull |
 | ,gs  | :Gstatus |
