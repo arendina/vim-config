@@ -72,6 +72,11 @@ set showmatch       " highlight matching {[()]}
 set ruler	        " Show row and column ruler information
 set splitbelow      " when horizontal split open a window below
 set splitright      " when vertical split open a window at right
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " ******
 " Search
