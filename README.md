@@ -11,6 +11,15 @@ TODO
 Download the vimrc file, put it in your home .vimrc
 From vim run :PlugInstall
 
+## Basic Commands
+
+### Split layouts: 
+
+horizontal split: sp <filename>
+Vertical split:  vs <filename>
+
+You can use tab completion to have the list of files after typing the command.
+
 ## Plugins
 
 ### Fugitive Commands
