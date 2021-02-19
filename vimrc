@@ -101,6 +101,7 @@ set foldmethod=indent   " fold based on indent level
 let mapleader=","       " leader is comma
 " save session
 nnoremap <leader>s :mksession<CR>
+
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
