@@ -104,6 +104,19 @@ nnoremap <leader>s :mksession<CR>
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+" Fugitive
+noremap <Leader>ga :Gwrite<CR>
+noremap <Leader>gc :Git commit<CR>
+noremap <Leader>gsh :Git push<CR>
+noremap <Leader>gll :Git pull<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Git blame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+
 " ************
 " Key Mappings
 " ************
@@ -114,20 +127,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Fold/unfold with space
 nnoremap <space> za
 
 " highlight last inserted text
 nnoremap gV `[v`]
 
-" Fugitive
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Git commit<CR>
-noremap <Leader>gsh :Git push<CR>
-noremap <Leader>gll :Git pull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Git blame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
+" NERDTree
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " **********
 " Autogroups
