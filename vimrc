@@ -4,12 +4,16 @@
 call plug#begin()
 
 Plug 'kien/ctrlp.vim'           " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-Plug 'morhetz/gruvbox'          " Retro groove colorscheme for Vim
-Plug 'sjl/badwolf'              " A color scheme for Vim, pieced together by Steve Losh.
+Plug 'scrooloose/nerdtree'      " A tree explorer plugin for Vim
 Plug 'tpope/vim-fugitive'       " the premier Vim plugin for Git
 Plug 'Thyrum/vim-stabs'         " Tabs for indentation, spaces for alignment
 Plug 'tmhedberg/simpylfold'     " No-BS Python code folding for Vim
 Plug 'vim-syntastic/syntastic'  " a syntax checking plugin for Vim created by Martin Grenfell.
+
+" colorschemes
+Plug 'jnurmine/Zenburn'
+Plug 'morhetz/gruvbox'          " Retro groove colorscheme for Vim
+Plug 'sjl/badwolf'              " A color scheme for Vim, pieced together by Steve Losh.
 
 call plug#end()
 
@@ -73,11 +77,6 @@ set showmatch       " highlight matching {[()]}
 set ruler	        " Show row and column ruler information
 set splitbelow      " when horizontal split open a window below
 set splitright      " when vertical split open a window at right
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " ******
 " Search
@@ -94,11 +93,7 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 " space open close folds
-nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
-
-" highlight last inserted text
-nnoremap gV `[v`]
 
 " ****************
 " Leader shortcuts
@@ -108,6 +103,31 @@ let mapleader=","       " leader is comma
 nnoremap <leader>s :mksession<CR>
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+
+" ************
+" Key Mappings
+" ************
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+nnoremap <space> za
+
+" highlight last inserted text
+nnoremap gV `[v`]
+
+" Fugitive
+noremap <Leader>ga :Gwrite<CR>
+noremap <Leader>gc :Git commit<CR>
+noremap <Leader>gsh :Git push<CR>
+noremap <Leader>gll :Git pull<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Git blame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
 
 " **********
 " Autogroups
@@ -164,16 +184,6 @@ set omnifunc=syntaxcomplete#Complete
 " *******
 " Plugins
 " *******
-
-" Fugitive
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Git commit<CR>
-noremap <Leader>gsh :Git push<CR>
-noremap <Leader>gll :Git pull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Git blame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
