@@ -13,12 +13,24 @@ From vim run :PlugInstall
 
 ## Basic Commands
 
+### Sessions
+
+| Shortcut | Command | Description |
+| -------- | ------- | ----------- |
+| ,s | :mksession | save a session |
+
+
+### Search
+| Shortcut | Command | Description |
+| -------- | ------- | ----------- |
+| ,space | :nohlsearch | turn off search highlight |
+
 ### Split layouts 
 
 horizontal split: sp <filename>
 Vertical split:  vs <filename>
 
-### Split commands
+### Split Navigation Commands
 
 | Command | Description |
 | ------- | ----------- |
@@ -36,17 +48,32 @@ You can use tab completion to have the list of files after typing the command.
 | :ls     | list buffers |
 | :b buffer name or number | open buffer |
 
+### Folding
+
+| Shortcut | Command |
+| -------- | ------- |
+| space | za |
+
 ## Plugins
 
 ### Fugitive Commands
 
-| Leader shortcut | Command |
-| --------------- | ------- |
-| ,ga | :Gwrite |
-| ,gc | :Git commit |
-| ,gsh | :Git push |
-| ,gll | :Git pull |
-| ,gs  | :Gstatus |
-| ,gb  | :Git blame |
-| ,gd  | :Gvdiff |
-| ,gr | :Gremove |
+| Shortcut | Command | Description |
+| -------- | ------- | ----------- |
+| ,ga | :Gwrite | git add file |
+| ,gc | :Git commit | commit |
+| ,gsh | :Git push | push |
+| ,gll | :Git pull | pull |
+| ,gs  | :Gstatus | status |
+| ,gb  | :Git blame | blame |
+| ,gd  | :Gvdiff | diff |
+| ,gr | :Gremove | remove |
+
+### NerdTree Commands
+
+| Shortcut | Command |
+| -------- | ------- |
+| ,n | :NERDTreeFocus | 
+| C-n | :NERDTree |
+| C-t | :NERDTreeToggle |
+| C-f | :NERDTreeFind |
