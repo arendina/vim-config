@@ -9,6 +9,8 @@ Plug 'tpope/vim-fugitive'       " the premier Vim plugin for Git
 Plug 'Thyrum/vim-stabs'         " Tabs for indentation, spaces for alignment
 Plug 'tmhedberg/simpylfold'     " No-BS Python code folding for Vim
 Plug 'vim-syntastic/syntastic'  " a syntax checking plugin for Vim created by Martin Grenfell.
+Plug 'vim-airline/vim-airline'  " lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline-themes'  " A collection of themes for vim-airline
 
 " colorschemes
 Plug 'jnurmine/Zenburn'
@@ -99,6 +101,11 @@ set foldmethod=indent   " fold based on indent level
 " Leader shortcuts
 " ****************
 let mapleader=","       " leader is comma
+
+" Buffers
+nnoremap <leader>q :bprev<CR><CR>
+nnoremap <leader>w :bnext<CR><CR>
+
 " save session
 nnoremap <leader>s :mksession<CR>
 
@@ -121,6 +128,7 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 " ************
 " Key Mappings
 " ************
+
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -212,3 +220,7 @@ let g:syntastic_check_on_wq = 0
 
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
+
+" airline
+let g:airline#extensions#tabline#enabled = 1 " enable tabs
+let g:airline_theme='gruvbox'
