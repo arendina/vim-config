@@ -201,6 +201,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0   " do not load loc_list, it's annoying
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_sh_shellcheck_args='-x' " let shellcheck follow other files, like source something
 
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
