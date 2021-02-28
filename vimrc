@@ -11,6 +11,7 @@ Plug 'tmhedberg/simpylfold'     " No-BS Python code folding for Vim
 Plug 'vim-syntastic/syntastic'  " a syntax checking plugin for Vim created by Martin Grenfell.
 Plug 'vim-airline/vim-airline'  " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'  " A collection of themes for vim-airline
+Plug 'tpope/vim-surround'       " quoting parenthesizing made simple
 
 " colorschemes
 Plug 'jnurmine/Zenburn'
@@ -159,6 +160,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
+    autocmd BufEnter *.sh setlocal textwidth=80
 augroup END
 
 " Backups
