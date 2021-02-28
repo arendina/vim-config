@@ -157,10 +157,7 @@ augroup configgroup
     autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
                 \:call <SID>StripTrailingWhitespaces()
     autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufEnter *.sh setlocal tabstop=2
-    autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufEnter *.sh setlocal softtabstop=2
-    autocmd BufEnter *.sh setlocal textwidth=80
+    autocmd Filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
 augroup END
 
 " Backups
