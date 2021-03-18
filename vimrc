@@ -158,6 +158,7 @@ augroup configgroup
                 \:call <SID>StripTrailingWhitespaces()
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd Filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
 " Backups
