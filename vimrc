@@ -3,8 +3,8 @@
 " ********
 call plug#begin()
 
-Plug 'kien/ctrlp.vim'           " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'scrooloose/nerdtree'      " A tree explorer plugin for Vim
+Plug 'kien/ctrlp.vim'           " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'tpope/vim-fugitive'       " the premier Vim plugin for Git
 Plug 'Thyrum/vim-stabs'         " Tabs for indentation, spaces for alignment
 Plug 'tmhedberg/simpylfold'     " No-BS Python code folding for Vim
@@ -17,23 +17,101 @@ Plug 'tpope/vim-surround'       " quoting parenthesizing made simple
 Plug 'jnurmine/Zenburn'
 Plug 'morhetz/gruvbox'          " Retro groove colorscheme for Vim
 Plug 'sjl/badwolf'              " A color scheme for Vim, pieced together by Steve Losh.
+Plug 'ervandew/supertab'
 
 call plug#end()
 
-" *******
-" General
-" *******
-" set linebreak	    " Break lines at word (requires Wrap lines)
-" set showbreak=+++ 	" Wrap-broken line prefix
-" set textwidth=79	" Line wrap (number of cols)
-set fileformat=unix 
-set undolevels=1000	" Number of undo levels
+" *************
+" Base settings
+" *************
+
+"" Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set ttyfast 	" send more characters to the terminal
+
 set backspace=indent,eol,start	" Backspace behaviour
 
-" ******
-" Colors
-" ******
+set tabstop=4       " Number of visual spaces per tab
+set softtabstop=0	" Number of spaces per Tab when editing
+set shiftwidth=4	" Number of auto-indent spaces
+set noexpandtab	    " Use tabs for indentation
+
+set copyindent
+set preserveindent
+set autoindent	    " Auto-indent new lines
+set smartindent	    " Enable smart-indent
+set smarttab	    " Enable smart-tabs
+
+" Map leader to ,
+let mapleader=','       " leader is comma
+
+" Enable hidden buffers
+set hidden
+
+set hlsearch	" Highlight all search results
+set incsearch	" Searches for strings incrementally
+set ignorecase	" Always case-insensitive
+set smartcase	" Enable smart-case search
+
+set fileformat=unix 
+set undolevels=1000	" Number of undo levels
+
+" session management
+let g:session_directory = "~/.vim/session"
+let g:session_autoload = "no"
+let g:session_autosave = "no"
+let g:session_command_aliases = 1
+
+" ***************
+" Visual Settings
+" ***************
+
+syntax enable   " Enable syntax highlighting
+set ruler	    " Show row and column ruler information
+set number	    " Shows line numbers
+
 colorscheme gruvbox
+set t_Co=256 	" Set the number of colors
+
+"" Disable the blinking cursor.
+set gcr=a:blinkon0
+
+set scrolloff=3
+
+
+"" Status bar
+set laststatus=2
+
+"" Use modeline overrides
+set modeline
+set modelines=10
+
+set title
+set titleold="Terminal"
+set titlestring=%F
+
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+if exists("*fugitive#statusline")
+  set statusline+=%{fugitive#statusline()}
+endif
+
+" vim-airline
+let g:airline_theme='gruvbox'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+
+
 
 " Make the gutters darker than the background.
 " 0: off, 1: on
@@ -52,42 +130,18 @@ colorscheme gruvbox
 " default: 0
 " let g:badwolf_css_props_highlight = 0
 
-syntax enable   " Enable syntax highlighting
-
-" ************************
-" Indentation, Space, Tabs
-" ************************
-set noexpandtab	    " Use tabs for indentation
-set copyindent
-set preserveindent
-set softtabstop=0	" Number of spaces per Tab when editing
-set shiftwidth=4	" Number of auto-indent spaces
-set tabstop=4       " Number of visual spaces per tab
-set autoindent	    " Auto-indent new lines
-set smartindent	    " Enable smart-indent
-set smarttab	    " Enable smart-tabs
 
 " *********
 " UI Config
 " *********
-set number	        " Shows line numbers
 set showcmd         " Show command line in bottom bar
 set cursorline      " highlight current line
 filetype indent on  " load filetype specific indent files
 set wildmenu        " visual autocomplete for command menu
 set lazyredraw      " redraw only when needed
 set showmatch       " highlight matching {[()]}
-set ruler	        " Show row and column ruler information
 set splitbelow      " when horizontal split open a window below
 set splitright      " when vertical split open a window at right
-
-" ******
-" Search
-" ******
-set incsearch	" Searches for strings incrementally
-set hlsearch	" Highlight all search results
-set smartcase	" Enable smart-case search
-set ignorecase	" Always case-insensitive
 
 " *******
 " Folding
@@ -101,7 +155,6 @@ set foldmethod=indent   " fold based on indent level
 " ****************
 " Leader shortcuts
 " ****************
-let mapleader=","       " leader is comma
 
 " Buffers
 nnoremap <leader>q :bprev<CR><CR>
@@ -207,6 +260,4 @@ let g:syntastic_sh_shellcheck_args='-x' " let shellcheck follow other files, lik
 " SimpylFold
 let g:SimpylFold_docstring_preview=1
 
-" airline
-let g:airline#extensions#tabline#enabled = 1 " enable tabs
-let g:airline_theme='gruvbox'
+
